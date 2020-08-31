@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Kode Pos Indonesia</title>
+        <meta
+            name="description"
+            content="Aplikasi untuk mencari kode pos berdasarkan wilayah tertentu di Indonesia"
+        />
+        <meta name="theme-color" content="#FF3860" />
+        <meta name="robots" content="index" />
+    </head>
+    <body>
+        <header>
+            <app-bar></app-bar>
+        </header>
+
+        <section class="section" id="section-pencarian">
+            <div class="container">
+                <!-- KARTU PILIHAN KODE POS -->
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            Cari kode pos di wilayah Indonesia dengan memasukkan
+                            beberapa kata kunci pencarian di bawah ini.
+
+                            <div>
+                                <!-- INPUT PROVINSI -->
+                                <div class="field mt-4">
+                                    <label class="label">Provinsi</label>
+                                    <div class="control">
+                                        <div
+                                            class="select is-rounded"
+                                            id="select-provinsi"
+                                        >
+                                            <select>
+                                                <option
+                                                    value=""
+                                                    selected
+                                                    disabled
+                                                >
+                                                    Pilih Provinsi di Indonesia
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT KOTA KABUPATEN -->
+                                <div class="field mt-4">
+                                    <label class="label"
+                                        >Kota atau Kabupaten
+                                    </label>
+                                    <div class="control">
+                                        <div
+                                            class="select is-rounded"
+                                            id="select-kotakab"
+                                        >
+                                            <select>
+                                                <option
+                                                    value=""
+                                                    selected
+                                                    disabled
+                                                >
+                                                    Pilih Kota/Kabupaten
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- INPUT ISIAN PENCARIAN BERDASARKAN NAMA DAERAH -->
+                                <div class="field mt-4">
+                                    <label class="label">
+                                        Masukkan Kata Kunci Pencarian
+                                    </label>
+                                    <div class="field has-addons mt-4">
+                                        <div
+                                            id="container-inputsearch"
+                                            class="control is-expanded has-icons-left"
+                                        >
+                                            <input
+                                                id="search-key-input"
+                                                name="search-key-input"
+                                                class="input is-rounded"
+                                                type="text"
+                                                placeholder="masukkan kata kunci pencarian disini"
+                                                disabled
+                                                autocomplete="off"
+                                            />
+
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-search"></i>
+                                            </span>
+                                        </div>
+                                        <div class="control">
+                                            <a
+                                                class="button is-success"
+                                                id="button-search"
+                                            >
+                                                Cari
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HASIL PENCARIAN KODE POS -->
+            <div class="container mt-4">
+                <list-kodepos></list-kodepos>
+            </div>
+        </section>
+
+        <section class="section remove-els" id="section-about">
+            <div class="container">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="center-content-img">
+                            <img
+                                src="./img/mail-send.png"
+                                alt="Gambar logo"
+                                class="image is-128x128"
+                                width="100"
+                                loading="lazy"
+                            />
+                        </div>
+                        <p class="title mt-5 center-text">
+                            “Aplikasi Kode Pos Indonesia”
+                        </p>
+                        <p class="subtitle center-text" id="versi-aplikasi">
+                            Versi 1.0.0 - GulajavaMinistudio @ 2020
+                        </p>
+                        <p>
+                            Aplikasi untuk mencari kode pos berdasarkan daerah
+                            kecamatan dan provinsi di Indonesia. Pengguna cukup
+                            memasukkan provinsi, pilihan kota atau kabupaten,
+                            dan kata pencarian. Kata kunci pencarian dapat
+                            berupa nama kecamatan, nama kelurahan, dan potongan
+                            nomor kode pos yang ingin dicari. Sumber data kode
+                            pos di dalam aplikasi ini bersumber dari repository
+                            Github API data publik di Github
+                            <a
+                                href="https://github.com/farizdotid/DAFTAR-API-LOKAL-INDONESIA"
+                                target="_blank"
+                                rel="noreferrer"
+                                >https://github.com/farizdotid/DAFTAR-API-LOKAL-INDONESIA</a
+                            >
+                        </p>
+                        <div class="is-italic mt-1">
+                            Icons made by
+                            <a
+                                href="https://www.flaticon.com/authors/freepik"
+                                title="Freepik"
+                                target="_blank"
+                                rel="noreferrer"
+                                >Freepik</a
+                            >
+                            from
+                            <a
+                                href="https://www.flaticon.com/"
+                                title="Flaticon"
+                                target="_blank"
+                                rel="noreferrer"
+                                >www.flaticon.com</a
+                            >
+                        </div>
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item">
+                            <span>
+                                Share on
+                                <a
+                                    href="https://web.facebook.com/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    >Facebook</a
+                                >
+                            </span>
+                        </p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

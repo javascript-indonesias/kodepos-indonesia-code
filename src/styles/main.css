@@ -1,0 +1,35 @@
+@import '../../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css';
+@import '../../node_modules/@fortawesome/fontawesome-free/css/solid.min.css';
+
+html,
+body {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+}
+
+.hidden-el {
+    visibility: hidden;
+}
+
+.remove-els {
+    display: none;
+}
+
+.bold-title-header {
+    font-weight: bold;
+}
+
+.shadow-card {
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+        0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+
+.center-content-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+}
