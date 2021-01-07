@@ -13,12 +13,14 @@ const PATHS = {
     src: path.join(__dirname, 'src'),
 };
 
-function purgeWhitelist() {
-    return [
-        'animate__animated',
-        'animate__fadeOutRight',
-        'animate__fadeInLeft',
-    ];
+function collectSafelist() {
+    return {
+        greedy: [
+            /^animate__animated/,
+            /^animate__fadeOutRight/,
+            /^animate__fadeInLeft/,
+        ],
+    };
 }
 
 const prodConf = {
@@ -104,7 +106,7 @@ const prodConf = {
         }),
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-            whitelist: purgeWhitelist,
+            safelist: collectSafelist,
         }),
         new CopyPlugin({
             patterns: [{ from: 'src/img', to: './img' }],
