@@ -24,14 +24,18 @@ module.exports = {
         },
     },
     output: {
-        filename: '[name].[hash].bundle.js',
+        filename: '[name].[fullhash].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
             {
                 test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                loader: 'file-loader?name=[name].[ext]',
+                use: [
+                    {
+                        loader: 'file-loader?name=[name].[ext]',
+                    },
+                ],
             },
         ],
     },

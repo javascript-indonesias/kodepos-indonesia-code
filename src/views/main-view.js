@@ -30,6 +30,8 @@ class MainView {
             '#container-inputsearch',
         );
 
+        this.versiAplikasiEl = document.querySelector('#versi-aplikasi');
+
         this.setEnableInputSearch(false);
         this.showProgressInputPencarian(false);
 
@@ -38,6 +40,8 @@ class MainView {
         this.setListenerInputDebounce();
 
         this.setListenerButtonSearch();
+
+        this.setDateTanggalVersiAplikasi();
     }
 
     async getDaftarProvinsi() {
@@ -309,6 +313,13 @@ class MainView {
         } else {
             this.buttonSearchEl.classList.remove('is-loading');
         }
+    }
+
+    setDateTanggalVersiAplikasi() {
+        const date = new Date();
+        const yearSekarang = date.getFullYear();
+        const stringCopyrightTahun = `Versi 1.1.0 - GulajavaMinistudio @ ${yearSekarang}`;
+        this.versiAplikasiEl.innerText = stringCopyrightTahun;
     }
 }
 

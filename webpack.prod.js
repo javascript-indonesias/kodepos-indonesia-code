@@ -27,12 +27,11 @@ const prodConf = {
         minimizer: [
             new TerserPlugin({
                 parallel: true,
-                sourceMap: true,
                 extractComments: false,
                 terserOptions: {
                     ecma: 5,
                     mangle: true,
-                    output: {
+                    format: {
                         comments: false,
                     },
                 },
@@ -82,6 +81,9 @@ const prodConf = {
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: './',
+                        },
                     },
                     {
                         loader: 'css-loader',
@@ -98,7 +100,7 @@ const prodConf = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: '[name].css',
-            chunkFilename: '[id].[hash].bundle.css',
+            chunkFilename: '[id].[fullhash].bundle.css',
         }),
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
