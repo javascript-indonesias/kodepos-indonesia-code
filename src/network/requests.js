@@ -26,12 +26,13 @@ const getListDaftarProvinsiAsync = () => {
                 new Error(`Error request code ${resp.status}`),
             );
         })
-        .then((resjson) => {
-            return new Promise((resolve) => {
-                const listProvinsiParsed = parseDataProvinsiList(resjson);
-                resolve(listProvinsiParsed);
-            });
-        })
+        .then(
+            (resjson) =>
+                new Promise((resolve) => {
+                    const listProvinsiParsed = parseDataProvinsiList(resjson);
+                    resolve(listProvinsiParsed);
+                }),
+        )
         .catch((err) => Promise.reject(err));
 
     return request;
@@ -55,12 +56,15 @@ const getListDaftarKotaKabupatenAsync = (idProvinsi) => {
                 new Error(`Error request code ${resp.status}`),
             );
         })
-        .then((resjson) => {
-            return new Promise((resolve) => {
-                const listKotaProvinsiParsed = parseDataKotaKabList(resjson);
-                resolve(listKotaProvinsiParsed);
-            });
-        })
+        .then(
+            (resjson) =>
+                new Promise((resolve) => {
+                    const listKotaProvinsiParsed = parseDataKotaKabList(
+                        resjson,
+                    );
+                    resolve(listKotaProvinsiParsed);
+                }),
+        )
         .catch((err) => Promise.reject(err));
 
     return request;
@@ -84,12 +88,15 @@ const getListKodePosAsync = (idKotaKab) => {
                 new Error(`Error request code ${resp.status}`),
             );
         })
-        .then((resjson) => {
-            return new Promise((resolve) => {
-                const listKotaProvinsiParsed = parseDataKodePostSort(resjson);
-                resolve(listKotaProvinsiParsed);
-            });
-        })
+        .then(
+            (resjson) =>
+                new Promise((resolve) => {
+                    const listKotaProvinsiParsed = parseDataKodePostSort(
+                        resjson,
+                    );
+                    resolve(listKotaProvinsiParsed);
+                }),
+        )
         .catch((err) => Promise.reject(err));
 
     return request;

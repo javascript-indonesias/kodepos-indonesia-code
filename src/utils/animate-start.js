@@ -1,8 +1,8 @@
 // Utility class dari Animate CSS
 // https://animate.style/#javascript
-const startAnimate = (element, animation, prefix = 'animate__') => {
+const startAnimate = (element, animation, prefix = 'animate__') =>
     // We create a Promise and return it
-    return new Promise((resolve) => {
+    new Promise((resolve) => {
         const animationName = `${prefix}${animation}`;
         const node = document.querySelector(element);
 
@@ -18,6 +18,4 @@ const startAnimate = (element, animation, prefix = 'animate__') => {
 
         node.addEventListener('animationend', handleAnimationEnd);
     });
-};
-
 export default startAnimate;
